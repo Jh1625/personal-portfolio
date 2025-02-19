@@ -1,4 +1,5 @@
 import PF from "../assets/PF.png"
+import { HERO_CONTEXT } from "../constants"
 
 <PF className="jpg"></PF>
 
@@ -13,10 +14,7 @@ const Hero = () => {
                     <span className = "bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-4xl tracking-tight text-transparent">
                         Multimedia University Fresh Graduate
                     </span>
-                    <p className = "my-2 max-w-xl py-6 font-light tracking-tight">A fresh graduate with degree in Data Communication and Networking from Multimedia University. 
-                      Currently, I am actively seeking for a full-time position in Information Technology. 
-                      Eager to contribute to dynamic teams and grow in a challenging environment. 
-                      Always keen to learn and adapt to the latest trends in technology.
+                    <p className = "my-2 max-w-xl py-6 font-light tracking-tight">{HERO_CONTEXT}
                     </p>
             </div>
         </div>
