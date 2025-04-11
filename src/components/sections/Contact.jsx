@@ -9,20 +9,26 @@ export const Contact = () => {
         message: "",
     });
 
+    const SERVICE_ID = "service_c89o1f4";
+    const TEMPLATE_ID = "template_lt7vg0s";
+    const PUBLIC_KEY = "fCuaO5w9lIkH8Q9Bw";
+
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, e.target, import.meta.env.VITE_PUBLIC_KEY).then((result) => {
-            alert("Message sent successfully!");
-            setFormData({
-                name: "",
-                email: "",
-                message: "",
-            });
-        }).catch(() => {
-            alert("Oops! Something went wrong. Please try again later.");
-        });
-    };
+    
+        emailjs
+          .sendForm(
+            SERVICE_ID,
+            TEMPLATE_ID,
+            e.target,
+            PUBLIC_KEY
+          )
+          .then((result) => {
+            alert("Message Sent!");
+            setFormData({ name: "", email: "", message: "" });
+          })
+          .catch(() => alert("Oops! Something went wrong. Please try again."));
+      };
 
     return (
     <section id ="contact" className="min-h-screen flex items-center justify-center py-20">
